@@ -15,7 +15,7 @@
     "pre:public": "npm run copyassets && npm run copystatic",
     "firebase:serve": "npm run build && npm run serve",
     "serve": "cross-env DEBUG=nuxt:*  firebase serve --only hosting,functions",
-    "firebase:deploy": "firebase deploy"
+    "deploy": "firebase deploy"
   },
   "keywords": [],
   "author": "",

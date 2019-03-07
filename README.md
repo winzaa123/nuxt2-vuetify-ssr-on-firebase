@@ -26,25 +26,23 @@ We will now get everything setup and deployed in 3 commands:
 yarn setup
 ```
 
-1.1  for Dev.
+### for Dev
 
 ```bash
 yarn dev
 ```
 
-2. Build The Project
+### for Serve (Local server)
 
-```bash
-yarn firebase:serve
-```
+1. `yarn build`
+2. `yarn pre:public`
+3. `yarn serve`
 
-3. Deploy To Firebase
+### for deploy  (Firebase hosting)
 
-```bash
-yarn firebase:deploy
-```
-
-**_Your site should now be live!_**
+1. `yarn build`
+2. `yarn pre:public`
+3. `yarn deploy`
 
 ---
 
