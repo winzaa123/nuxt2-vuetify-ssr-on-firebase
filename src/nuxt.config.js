@@ -15,7 +15,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
 
@@ -28,14 +29,14 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'ant-design-vue/dist/antd.css'
+    // 'ant-design-vue/dist/antd.css'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/antd-ui'
+    // { src: '@/plugins/antd-ui', mode: 'server' }
   ],
 
   /*
@@ -45,6 +46,18 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    ['@nuxtjs/vuetify', {
+      materialIcons: false,
+      theme: {
+        primary: '#03A9F4',
+        secondary: '#009688',
+        accent: '#E91E63',
+        error: '#f44336',
+        warning: '#FDD835',
+        info: '#2196f3',
+        success: '#4caf50'
+      }
+    }]
   ],
   /*
   ** Axios module configuration
