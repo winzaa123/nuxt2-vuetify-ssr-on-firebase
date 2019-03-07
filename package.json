@@ -1,0 +1,26 @@
+{
+  "name": "nuxt2-firebase-ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup:client": "cd \"src\" && npm i",
+    "setup:server": "cd \"functions\" && npm i",
+    "setup:firebase": "cp .setup-firebaserc .firebaserc",
+    "setup": "npm i && npm run setup:firebase && npm run setup:client  && npm run setup:server",
+    "dev": "cd ./src && npm run dev",
+    "build": "cd ./src && npm run build",
+    "copyassets": "cp -R ./functions/.nuxt/dist/client/* ./public/assets",
+    "copystatic": "cp -R ./src/static/* ./public",
+    "pre:public": "npm run copyassets && npm run copystatic",
+    "firebase:serve": "npm run build && npm run serve",
+    "serve": "cross-env DEBUG=nuxt:*  firebase serve --only hosting,functions",
+    "firebase:deploy": "firebase deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  }
+}
