@@ -35,11 +35,15 @@ yarn dev
 
 ### for Serve (Local server)
 
-`yarn firebase:serve`
+```bash
+yarn firebase:serve
+```
 
 ### for deploy  (Firebase hosting)
 
+```bash
 `yarn deploy`
+```
 
 ---
 
