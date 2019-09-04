@@ -21,6 +21,7 @@ We will now get everything setup and deployed in 3 commands:
 **Note:** _All of these commands are ran from the root directory_
 
 1. Install Dependencies in all necessary directories and creates `.firebaserc` from `.setup-firebaserc`
+2. `npm install -g firebase-tools`
 
 ```bash
 yarn setup
@@ -34,15 +35,11 @@ yarn dev
 
 ### for Serve (Local server)
 
-1. `yarn build`
-2. `yarn pre:public`
-3. `yarn serve`
+`yarn firebase:serve`
 
 ### for deploy  (Firebase hosting)
 
-1. `yarn build`
-2. `yarn pre:public`
-3. `yarn deploy`
+`yarn deploy`
 
 ---
 
