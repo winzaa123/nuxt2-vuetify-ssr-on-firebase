@@ -42,7 +42,7 @@ yarn firebase:serve
 ### for deploy  (Firebase hosting)
 
 ```bash
-`yarn deploy`
+yarn deploy
 ```
 
 ---
