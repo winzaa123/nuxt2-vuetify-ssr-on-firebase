@@ -42,23 +42,26 @@ module.exports = {
   /*
   ** Nuxt.js modules
   */
+ buildModules: [
+  '@nuxtjs/vuetify'
+  ],
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    ['@nuxtjs/vuetify', {
-      materialIcons: false,
-      theme: {
-        primary: '#03A9F4',
-        secondary: '#009688',
-        accent: '#E91E63',
-        error: '#f44336',
-        warning: '#FDD835',
-        info: '#2196f3',
-        success: '#4caf50'
-      }
-    }]
   ],
+  vuetify: {
+    materialIcons: false,
+    theme: {
+      primary: '#03A9F4',
+      secondary: '#009688',
+      accent: '#E91E63',
+      error: '#f44336',
+      warning: '#FDD835',
+      info: '#2196f3',
+      success: '#4caf50'
+    }
+  },
   /*
   ** Axios module configuration
   */
@@ -69,9 +72,29 @@ module.exports = {
   /*
   ** Build configuration
   */
- buildDir: process.env.BUILD_DIR || './../functions/.nuxt',
+ buildDir: '.nuxt',
   build: {
     publicPath: '/assets/',
+
+    babel: {
+      presets({ isServer }) {
+      //   let targets = isServer ? { node: '10' } : { ie: '11' }
+        return [
+          [ require.resolve('@nuxt/babel-preset-app'), 
+            { 
+              // targets
+              buildTarget: isServer ? 'server' : 'client',
+              corejs: { version: 3 }
+            } 
+          ]
+        ]
+      },
+      'env': {
+        'production': {
+          'plugins': []
+        }
+      }
+    },
     /*
     ** You can extend webpack config here
     */

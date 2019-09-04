@@ -5,14 +5,16 @@
       {
         "source": "**",
         "function": "nuxtvuetify"
-    }
-    ],
-    "ignore": [
-      "firebase.json",
-      "**/node_modules/**"
+      }
     ]
   },
   "functions": {
-    "source": "functions"
+    "source": "src",
+    "predeploy": "yarn build && yarn pre:deploy",
+    "ignore":[
+      "static",
+      "node_modules",
+      "**/**/dist/client"
+    ]
   }
 }
