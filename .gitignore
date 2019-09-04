@@ -22,7 +22,6 @@ firebase-debug.log
 *.ntvs*
 *.njsproj
 *.sln
-package-lock.json
 
 # Testing
 /src/test/unit/coverage/
