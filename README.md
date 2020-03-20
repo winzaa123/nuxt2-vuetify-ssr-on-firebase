@@ -2,7 +2,7 @@
 
 Host a Nuxt2 Universal app or site by combining Nuxt2.js with Firebase Cloud Functions and Hosting.
 
-[Live Preview](https://fir-630f1.firebaseapp.com)
+[Live Preview](https://fir-nuxt-vuetify-demo.web.app/)
 
 ---
 
