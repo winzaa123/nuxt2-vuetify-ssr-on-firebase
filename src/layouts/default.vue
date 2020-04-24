@@ -1,31 +1,32 @@
 <template>
-  <v-app dark>
+  <v-app  >
     <v-navigation-drawer
       :mini-variant.sync="miniVariant"
-      :clipped="clipped"
+      :clipped="!clipped"
       v-model="drawer"
       fixed
       app
+      dark
     >
       <v-list>
-        <v-list-tile
+        <v-list-item
           router
           :to="item.to"
           :key="i"
           v-for="(item, i) in items"
           exact
         >
-          <v-list-tile-action>
-            <v-icon v-html="item.icon"></v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar fixed app :clipped-left="clipped">
-      <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
+    <v-toolbar   dark  :style="{'paddingLeft':drawer?miniVariant?'56px':'256px':0}"      >
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
@@ -44,7 +45,7 @@
       >
         <v-icon>remove</v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <v-toolbar-title>{{title}}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
         icon
@@ -60,17 +61,17 @@
     </v-content>
     <v-navigation-drawer
       temporary
-      :right="right"
+      right
       v-model="rightDrawer"
       fixed
     >
       <v-list>
-        <v-list-tile @click.native="right = !right">
-          <v-list-tile-action>
-            <v-icon light>compare_arrows</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
+        <v-list-item @click.native="rightDrawer = !rightDrawer">
+          <v-list-item-icon>
+            <v-icon>compare_arrows</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-footer :fixed="fixed" app>

@@ -53,6 +53,8 @@ module.exports = {
   vuetify: {
     materialIcons: false,
     theme: {
+      dark: false,
+      default: 'white',
       primary: '#03A9F4',
       secondary: '#009688',
       accent: '#E91E63',
