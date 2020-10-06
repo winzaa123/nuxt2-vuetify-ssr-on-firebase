@@ -2,7 +2,7 @@ const pkg = require('./package')
 
 
 module.exports = {
-  mode: 'universal',
+  // mode: 'universal', ssr : true (Default) ;; ssr: false // for SPA
 
   /*
   ** Headers of the page

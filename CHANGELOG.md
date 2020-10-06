@@ -1,4 +1,22 @@
 
+# 2.0.1
+
+### change (2020-10-06)
+
+* engine downgrade 10 to 8 ( untill Feb 15, 2021 ) for free version [Ref](https://firebase.google.com/support/faq#expandable-10)
+* Vue packages version mismatch in ssr
+
+```
++ nuxt@2.14.6
+added 207 packages from 156 contributors, removed 135 packages, updated 294 packages, moved 13 packages and audited 2481 packages in 66.796s
+
+Vue packages version mismatch:
+
+- vue@2.6.11
+- vue-server-renderer@2.6.12
+
+```
+
 # 2.0.0
 
 ### :rocket: changes (2020-04-24)
